@@ -1,0 +1,1 @@
+Exercises from the Pragmatic Studio Ruby course
