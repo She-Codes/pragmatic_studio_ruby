@@ -15,14 +15,14 @@ describe Project do
     expect(@project.funding_still_needed).to eq(@initial_goal - 0)
   end
 
-  it "increases funds by 25 when funds are added" do
-    @project.add_funds
-    expect(@project.funding).to eq(25)
+  it "increases funds by the amount entered when funds are added" do
+    @project.add_funds(15)
+    expect(@project.funding).to eq(15)
   end
 
   it "decreases funds by the amount entered when funds are removed" do
     amount_to_decrease = 10
-    @project.add_funds
+    @project.add_funds(25)
     @project.decrease_funds(amount_to_decrease)
     expect(@project.funding).to eq(15)
   end

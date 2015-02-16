@@ -9,6 +9,5 @@ startups.add_projects(project1, project2, project3)
 startups.manage_projects
 startups.evaluate_progress!
 
-puts startups
-
+puts startups.projects
 

@@ -7,14 +7,14 @@ class Project
     @goal = goal
   end
 
-  def add_funds(amt=25)
+  def add_funds(amt)
     @funding += amt
-    puts "#{@name} got some funds!"
+    puts "#{@name} got $#{amt}!"
   end
 
   def decrease_funds(amt)
     @funding -= amt
-    puts "#{@name} lost some funds!"
+    puts "#{@name} lost $#{amt}."
   end
 
   def funding_still_needed
