@@ -1,4 +1,5 @@
 require_relative 'project_adjuster'
+require_relative 'project_cleaner'
 
 class ProjectManager
   attr_accessor :name, :projects
@@ -24,12 +25,7 @@ class ProjectManager
       end
     end
 
-    empty_slots = @projects.select { |p| p == nil }
-    if empty_slots.empty?
-      puts "Good news! All projects are meeting at least 1% of their goal."
-    end
-
-    @projects.compact!
+    ProjectCleaner.clean(@projects)
   end
 
   def manage_projects
