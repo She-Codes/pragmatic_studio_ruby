@@ -1,5 +1,4 @@
-require_relative 'project'
-require_relative 'amount_generator'
+require_relative 'project_adjuster'
 
 class ProjectManager
   attr_accessor :name, :projects
@@ -35,19 +34,8 @@ class ProjectManager
 
   def manage_projects
     @projects.each do |project|
-      amt = AmountGenerator.new.generate
-      rand_num = number_generator
-      if rand_num == 1
-        project.decrease_funds(amt)
-      else
-        project.add_funds(amt)
-      end
+      ProjectAdjuster.adjust(project)
     end
   end
 
-  private
-
-  def number_generator
-    rand(1..2)
-  end
 end
