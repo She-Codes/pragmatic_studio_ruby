@@ -6,8 +6,9 @@ player3 = Player.new('curly')
 player4 = Player.new('shemp', 90)
 
 game1 = Game.new('Super Smurfs')
-game1.add_player(player1, player2, player3)
-game1.play
+game1.add_player(player1, player2, player3, player4)
+game1.play(4)
+game1.print_stats
 
 
 #puts player1.inspect

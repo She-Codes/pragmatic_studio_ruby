@@ -6,6 +6,7 @@ describe Player do
     @player = Player.new("larry", @initial_health)
     $stdout = StringIO.new
   end
+  
   it "has a capitalized name" do
     expect(@player.name).to eq("Larry")
   end
