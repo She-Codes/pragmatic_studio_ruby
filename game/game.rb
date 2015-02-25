@@ -28,22 +28,25 @@ class Game
 
   def print_stats
     strong_players, weak_players = @players.partition{|p| p.strong?}
-    sorted_players = @players.sort{|p1, p2| p2.score <=> p1.score}
 
     puts "\n#{@title} Statistics\n"
     puts "Strong Players:"
-    strong_players.each do |p|
-      puts "#{p.name} (#{p.health})"
-    end
+    print_name_and_health(strong_players)
     puts
     puts "Weak Players:"
-    weak_players.each do |p|
-      puts "#{p.name} (#{p.health})"
-    end
+    print_name_and_health(weak_players)
 
     puts "\n#{@title} High Scores:\n"
-    sorted_players.each do |p|
+    @players.sort.each do |p|
       puts "#{p.name.ljust(20, '.')} #{p.score}"
+    end
+  end
+
+  private
+
+  def print_name_and_health(arr)
+    arr.each do |p|
+      puts "#{p.name} (#{p.health})"
     end
   end
 end

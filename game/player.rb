@@ -30,6 +30,10 @@ class Player
   def to_s
     "I'm #{@name} with a health of #{@health} and a score of #{score}."
   end
+
+  def <=>(other_player)
+    other_player.score <=> score
+  end
 end
 
 if __FILE__ == $0
