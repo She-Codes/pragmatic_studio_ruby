@@ -52,6 +52,12 @@ class Player
   def points
     @found_treasures.values.reduce(0, :+)
   end
+
+  #not needed when using CSV library
+  def self.from_csv(string)
+    name, health = string.split(',')
+    Player.new(name, Integer(health))
+  end
 end
 
 if __FILE__ == $0
